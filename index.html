@@ -11,30 +11,30 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0a0e14; /* 深蓝色背景，契合之前Logo的质感 */
+            background-color: #0a0e14;
             color: #e0e0e0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
             text-align: center;
         }
 
         /* 左上角 Logo 容器 */
         .header-nav {
-            position: absolute;
+            position: fixed; /* 改为固定，滑动时也能看到品牌 */
             top: 0;
             left: 0;
             width: 100%;
             padding: 20px;
             display: flex;
             justify-content: flex-start;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+            z-index: 1000;
         }
 
         .logo {
-            height: 60px; /* 根据实际Logo比例调整 */
+            height: 50px;
             transition: transform 0.3s ease;
         }
 
@@ -44,16 +44,16 @@
 
         /* 主内容区 */
         .content {
-            max-width: 800px;
+            max-width: 1000px;
             padding: 20px;
-            margin-top: 80px;
+            margin-top: 100px;
         }
 
         h1 {
             font-size: 3rem;
             text-transform: uppercase;
             letter-spacing: 4px;
-            color: #d4af37; /* 金属金色，呼应骑士主题 */
+            color: #d4af37;
             margin-bottom: 10px;
             border-bottom: 2px solid #d4af37;
             display: inline-block;
@@ -75,38 +75,132 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 60px;
+        }
+
+        /* 游戏展示区块 */
+        .games-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .game-item {
+            width: 200px; /* 控制每个图标的显示宽度 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px; /* Google Play 标准圆角比例 */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .game-icon:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .game-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 5px;
+            transition: color 0.2s;
+        }
+
+        .game-title:hover {
+            color: #d4af37;
+        }
+
+        .platform {
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* 底部版权 */
         footer {
-            margin-top: 50px;
+            margin: 80px 0 40px 0;
             font-size: 0.8rem;
             color: #666;
+        }
+
+        /* 适配手机端 */
+        @media (max-width: 600px) {
+            .game-item { width: 45%; }
+            h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 顶部导航区域 -->
     <div class="header-nav">
-        <!-- 这里的 logoking.png 记得替换成你实际的图片文件名 -->
         <img src="logoking.png" alt="Knight’s Oath Gaming Logo" class="logo">
     </div>
 
-    <!-- 主页面内容 -->
     <div class="content">
         <h1>Knight’s Oath Gaming</h1>
         <p class="slogan">We grab fun into the games</p>
         
         <div class="description">
             <p>
-                <strong>Knight’s Oath Gaming</strong> Dedicated to crafting the ultimate casual gaming experience for every player. 
+                <strong>Knight’s Oath Gaming</strong> is dedicated to crafting the ultimate casual gaming experience for every player. 
                 Our origin stems from a solemn oath: to safeguard the purest, most intuitive joy of play amidst the fast-paced nature of modern life.
             </p>
             <p>
-                True to our name, we wield craftsmanship as our sword and quality as our shield.
+                True to our name, we wield craftsmanship as our sword and quality as our shield. 
                 By relentlessly pushing the boundaries of creativity, we ensure that every title becomes a warm and sophisticated companion for your leisure time.
             </p>
+        </div>
+
+        <!-- 游戏展示 Section -->
+        <div class="games-grid">
+            <!-- 游戏 1 -->
+            <div class="game-item">
+                <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID_1" target="_blank">
+                    <img src="game1_icon.png" alt="Game 1" class="game-icon">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID_1" class="game-title" target="_blank">Game Name 1</a>
+                <span class="platform">Android / iOS</span>
+            </div>
+
+            <!-- 游戏 2 -->
+            <div class="game-item">
+                <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID_2" target="_blank">
+                    <img src="game2_icon.png" alt="Game 2" class="game-icon">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID_2" class="game-title" target="_blank">Game Name 2</a>
+                <span class="platform">Android</span>
+            </div>
+
+            <!-- 游戏 3 -->
+            <div class="game-item">
+                <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID_3" target="_blank">
+                    <img src="game3_icon.png" alt="Game 3" class="game-icon">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID_3" class="game-title" target="_blank">Game Name 3</a>
+                <span class="platform">Android</span>
+            </div>
+
+            <!-- 游戏 4 -->
+            <div class="game-item">
+                <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID_4" target="_blank">
+                    <img src="game4_icon.png" alt="Game 4" class="game-icon">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID_4" class="game-title" target="_blank">Game Name 4</a>
+                <span class="platform">Android / iOS</span>
+            </div>
         </div>
     </div>
 
