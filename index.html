@@ -1,11 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>Welcome to Elder Knight GAME</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight’s Oath Gaming | Official Site</title>
     <meta name="google-site-verification" content="s_o9X0-eMoIcnheVCs3VG_ZbM9SnwlNNQ66FYxOH4xM" />
+    <style>
+        /* 整体基础样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0a0e14; /* 深蓝色背景，契合之前Logo的质感 */
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* 左上角 Logo 容器 */
+        .header-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+        }
+
+        .logo {
+            height: 60px; /* 根据实际Logo比例调整 */
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* 主内容区 */
+        .content {
+            max-width: 800px;
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #d4af37; /* 金属金色，呼应骑士主题 */
+            margin-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .slogan {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cfcfcf;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* 底部版权 */
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Elder Knight GAME</h1>
-    <p>We grab fun into the games</p>
+
+    <!-- 顶部导航区域 -->
+    <div class="header-nav">
+        <!-- 这里的 logo.png 记得替换成你实际的图片文件名 -->
+        <img src="logo.png" alt="Knight’s Oath Gaming Logo" class="logo">
+    </div>
+
+    <!-- 主页面内容 -->
+    <div class="content">
+        <h1>Knight’s Oath Gaming</h1>
+        <p class="slogan">We grab fun into the games</p>
+        
+        <div class="description">
+            <p>
+                <strong>Knight’s Oath Gaming</strong> 致力于为每一位玩家打造极致的休闲游戏体验。
+                我们的诞生源于一个坚定的誓言：在快节奏的现代生活中，守护那份最纯粹、最直觉的游玩快乐。
+            </p>
+            <p>
+                正如我们的名字所言，我们以匠心为剑，以品质为盾，不断探索创意边界，
+                确保每一款作品都能成为您闲暇时光中最温暖且精致的陪伴。
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Knight’s Oath Gaming Limited. All Rights Reserved.
+    </footer>
+
 </body>
 </html>
