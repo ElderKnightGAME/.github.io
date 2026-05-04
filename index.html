@@ -20,47 +20,33 @@
             text-align: center;
         }
 
-        /* 固定导航栏 */
+        /* 左上角 Logo 容器 */
         .header-nav {
-            position: fixed;
+            position: fixed; /* 改为固定，滑动时也能看到品牌 */
             top: 0;
             left: 0;
             width: 100%;
-            padding: 15px 25px;
+            padding: 20px;
             display: flex;
             justify-content: flex-start;
-            background: rgba(10, 14, 20, 0.95);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
             z-index: 1000;
-            box-sizing: border-box;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        .nav-logo {
-            height: 40px;
+        .logo {
+            height: 50px;
             transition: transform 0.3s ease;
         }
 
-        /* 顶部超大 Logo 区块 (Hero Section) */
-        .hero-banner {
-            width: 100%;
-            margin-top: 70px; /* 避开固定导航栏 */
-            background: #0045c8; /* 匹配您Logo的蓝色底色 */
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .main-logo-big {
-            width: 100%;
-            max-width: 1200px; /* 虽然原始尺寸很大，但限制显示宽度以防溢出 */
-            height: auto;
-            display: block;
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         /* 主内容区 */
         .content {
             max-width: 1000px;
-            padding: 40px 20px;
+            padding: 20px;
+            margin-top: 100px;
         }
 
         h1 {
@@ -90,7 +76,6 @@
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             margin-bottom: 60px;
-            text-align: left;
         }
 
         /* 游戏展示区块 */
@@ -103,7 +88,7 @@
         }
 
         .game-item {
-            width: 200px;
+            width: 200px; /* 控制每个图标的显示宽度 */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -112,7 +97,7 @@
         .game-icon {
             width: 120px;
             height: 120px;
-            border-radius: 24px;
+            border-radius: 24px; /* Google Play 标准圆角比例 */
             box-shadow: 0 8px 20px rgba(0,0,0,0.6);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-bottom: 15px;
@@ -121,7 +106,7 @@
 
         .game-icon:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.3);
         }
 
         .game-title {
@@ -130,12 +115,18 @@
             color: #ffffff;
             text-decoration: none;
             margin-bottom: 5px;
+            transition: color 0.2s;
+        }
+
+        .game-title:hover {
+            color: #d4af37;
         }
 
         .platform {
             font-size: 0.9rem;
             color: #888;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* 底部版权 */
@@ -149,21 +140,13 @@
         @media (max-width: 600px) {
             .game-item { width: 45%; }
             h1 { font-size: 2rem; }
-            .main-logo-big { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 顶部固定导航 -->
     <div class="header-nav">
-        <img src="logoking.png" alt="Knight’s Oath Nav Logo" class="nav-logo">
-    </div>
-
-    <!-- 顶部超大 Logo 展板 -->
-    <div class="hero-banner">
-        <!-- 这里的 big_logo.png 替换为您 2816x1536 的文件 -->
-        <img src="centrallogo.png" alt="Knight’s Oath Gaming Banner" class="main-logo-big">
+        <img src="logoking.png" alt="Knight’s Oath Gaming Logo" class="logo">
     </div>
 
     <div class="content">
@@ -181,7 +164,7 @@
             </p>
         </div>
 
-    <!-- 游戏展示 Section -->
+        <!-- 游戏展示 Section -->
         <div class="games-grid">
             <!-- 游戏 1 -->
             <div class="game-item">
